@@ -43,29 +43,46 @@
                     </li>
                 </ul>
             </nav>
-            <!-- <div class="main-search">
-                <form action="/" method="POST">
-                    <input type="search" name="main-search" placeholder="Что ищем?">
-                </form>
-            </div>
             <div class="user-block">
-                <a href="#" class="login">Вход
-                    <form class="login-form" action="/" method="POST">
-                        <input type="email" name="login-email" placeholder="Электронная почта">
-                        <input type="password" name="login-password" placeholder="Пароль">
-                        <div class="clearfix">
-                            <input type="submit" name="login-send" value="Войти">
-                            <a href="#">Забыли пароль?</a>
-                            <a href="#">Новая регистрация</a>
+                <div class="main-search">
+                    <div class="main-search-icon"></div>
+                    <form action="/" method="POST">
+                        <div class="form-wrapper">
+                            <input type="search" name="main-search" class="input-text" id="main-search" required>
+                            <label for="main-search">Что ищем?</label>
                         </div>
                     </form>
-                </a>
-                <a class="cart not-empty" href="#">2 товара</a>
+                </div>
+                <div class="login">
+                    <a href="#" class="login-link">Вход</a>
+                    <form class="login-form" action="/" method="POST">
+                        <div class="form-wrapper">
+                            <input type="email" class="input-text" name="login-email" id="login-email" required>
+                            <label for="login-email">Электронная почта</label>
+                        </div>
+                        <div class="form-wrapper">
+                            <input type="password" class="input-text" id="login-password" name="login-password" required>
+                            <label for="login-password">Пароль</label>
+                        </div>
+                        <div class="form-wrapper">
+                            <input type="submit" name="login-send" value="Войти" class="button-red">
+                            <div class="login-helpers clearfix">
+                                <a href="#" class="link-dark"><span>Забыли пароль?</span></a>
+                                <a href="#" class="link-dark"><span>Новая регистрация</span></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="cart">
+                    <a class="cart-link not-empty" href="#">2 товара</a>
+                </div>
+                <div class="clearfix">
+                    <div class="mode">
+                        <p>С 10 до 20, ежедневно<br>
+                        <span>8 812 450-25-25</span></p>
+                    </div>
+                </div>
             </div>
-            <div class="mode">
-                <p>С 10 до 20, ежедневно<br>
-                <span>8 812 450-25-25</span></p>
-            </div> -->
         </div>
     </header>
     <main class="container">
@@ -214,10 +231,10 @@
         </div>
         <ul class="pagination">
             <li>
-                <span><</span>
+                <span>&lt;</span>
             </li>
             <li>
-                <a href="#">1</a>
+                <a href="#" class="active">1</a>
             </li>
             <li>
                 <a href="#">2</a>
