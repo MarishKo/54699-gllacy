@@ -15,14 +15,14 @@
             </a>
             <nav class="main-navigation">
                 <ul class="main-navigation-menu">
-                    <li class="main-navigation-item">
-                        <a href="#" class="active">Каталог</a>
+                    <li class="main-navigation-item active">
+                        <a href="#">Каталог</a>
                         <ul class="main-navigation-submenu">
                             <li>
                                 <a href="#" class="title"><b>Новинки</b></a>
                             </li>
                             <li>
-                                <a href="catalog.html">Сливочное</a>
+                                <a class="active">Сливочное</a>
                             </li>
                             <li>
                                 <a href="#">Щербеты</a>
@@ -45,7 +45,6 @@
             </nav>
             <div class="user-block">
                 <div class="main-search">
-                    <div class="main-search-icon"></div>
                     <form action="/" method="POST">
                         <div class="form-wrapper">
                             <input type="search" name="main-search" class="input-text" id="main-search" required>
@@ -73,8 +72,34 @@
                         </div>
                     </form>
                 </div>
-                <div class="cart">
-                    <a class="cart-link not-empty" href="#">2 товара</a>
+                <div class="cart not-empty">
+                    <a class="cart-link" href="#">2 товара</a>
+                    <div class="cart-popup">
+                        <ul>
+                            <li>
+                                <div class="cart-item">
+                                    <div class="delete"></div>
+                                    <img src="img/ice-c1-cart.jpg" alt="" class="cart-item-img" width="34" height="34">
+                                    <div class="cart-item-title">Пломбир с апельсиновым джемом</div>
+                                    <div class="cart-item-quantity">1,5 кг х <span>200 руб.</span></div>
+                                    <div class="cart-item-price">300 руб.</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cart-item">
+                                    <div class="delete"></div>
+                                    <img src="img/ice-c3-cart.jpg" alt="" class="cart-item-img" width="34" height="34">
+                                    <div class="cart-item-title">Клубничный пломбир с присыпкой из белого шоколада</div>
+                                    <div class="cart-item-quantity">1,5 кг х <span>300 руб.</span></div>
+                                    <div class="cart-item-price">450 руб.</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="total">Итого:750 руб.</p>
+                        <div class="clearfix">
+                            <a href="#" class="button-red">Оформить заказ</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="clearfix">
                     <div class="mode">
@@ -85,13 +110,13 @@
             </div>
         </div>
     </header>
-    <main class="container">
+    <main class="container main-catalog">
         <ul class="breadcrumps">
             <li>
-                <a href="index.html">Главная</a>
+                <a href="index.html" class="link-light"><span>Главная</span></a>
             </li>
             <li>
-                <a href="#">Каталог</a>
+                <a href="#" class="link-light"><span>Каталог</span></a>
             </li>
             <li>
                 Сливочное
@@ -99,37 +124,58 @@
         </ul>
         <h1>Сливочное мороженое</h1>
         <form action="/" method="POST" class="filter-form">
-            <p class="filter-label">Сортировка:</p>
-            <select id="filter-sort">
-                <option>По популярности</option>
-            </select>
-            <p class="filter-label">Цена: 100 руб. – 500 руб.</p>
-            <input type="range" name="filter-price">
-            <p class="filter-label">Жирность:</p>
-            <div class="filter-wrap">
-                <input type="radio" name="fatiness" value="0" id="fatiness-0">
-                <label for="fatiness-0">0%</label>
-                <input type="radio" name="fatiness" value="10" id="fatiness-10">
-                <label for="fatiness-10">до 10%</label>
-                <input type="radio" name="fatiness" value="30" id="fatiness-30">
-                <label for="fatiness-30">до 30%</label>
-                <input type="radio" name="fatiness" value="100" id="fatiness-100">
-                <label for="fatiness-100">выше 30%</label>
+            <div class="filter-row">
+               <div class="filter-select">
+                    <p class="filter-label">Сортировка:</p>
+                    <select id="filter-sort">
+                        <option value="1">По популярности</option>
+                        <option value="2">сначала недорогие</option>
+                        <option value="3">сначала дорогие</option>
+                        <option value="4">по жирности</option>
+                    </select>
+                </div>
+                <div class="filter-range">
+                    <p class="filter-label">Цена: 100 руб. – 500 руб.</p>
+                    <div class="range-controls">
+                        <div class="scale">
+                            <div class="bar" style="margin-left: 20%; width: 45%"></div>
+                        </div>
+                        <div class="toggle toggle-min"></div>
+                        <div class="toggle toggle-max"></div>
+                    </div>
+                </div>
+                <div class="filter-fatiness">
+                    <p class="filter-label">Жирность:</p>
+                    <div class="filter-wrap">
+                        <input type="radio" name="fatiness" value="0" id="fatiness-0" class="input-radio">
+                        <label for="fatiness-0">0%</label>
+                        <input type="radio" name="fatiness" value="10" id="fatiness-10" class="input-radio" checked>
+                        <label for="fatiness-10">до 10%</label>
+                        <input type="radio" name="fatiness" value="30" id="fatiness-30" class="input-radio">
+                        <label for="fatiness-30">до 30%</label>
+                        <input type="radio" name="fatiness" value="100" id="fatiness-100" class="input-radio">
+                        <label for="fatiness-100">выше 30%</label>
+                    </div>
+                </div> 
             </div>
-            <p class="filter-label">Наполнители:</p>
-            <div class="filter-wrap">
-                <input type="checkbox" name="savor-choco" value="choco" id="savor-choco">
-                <label for="savor-choco">шоколадные</label>
-                <input type="checkbox" name="savor-sugar" value="sugar" id="savor-sugar">
-                <label for="savor-sugar">сахарные присыпки</label>
-                <input type="checkbox" name="savor-fruit" value="fruit" id="savor-fruit">
-                <label for="savor-fruit">фрукты</label>
-                <input type="checkbox" name="savor-syrup" value="syrup" id="savor-syrup">
-                <label for="savor-syrup">сиропы</label>
-                <input type="checkbox" name="savor-jam" value="jam" id="savor-jam">
-                <label for="savor-jam">джемы</label>
-            </div>
-            <button class="filter-btn" name="filter-send" type="submit">Применить</button>
+            <div class="filter-row">
+                <div class="filter-savor">
+                    <p class="filter-label">Наполнители:</p>
+                    <div class="filter-wrap">
+                        <input type="checkbox" name="savor-choco" value="choco" id="savor-choco" class="input-checkbox" checked>
+                        <label for="savor-choco">шоколадные</label>
+                        <input type="checkbox" name="savor-sugar" value="sugar" id="savor-sugar" class="input-checkbox" checked>
+                        <label for="savor-sugar">сахарные присыпки</label>
+                        <input type="checkbox" name="savor-fruit" value="fruit" id="savor-fruit" class="input-checkbox">
+                        <label for="savor-fruit">фрукты</label>
+                        <input type="checkbox" name="savor-syrup" value="syrup" id="savor-syrup" class="input-checkbox">
+                        <label for="savor-syrup">сиропы</label>
+                        <input type="checkbox" name="savor-jam" value="jam" id="savor-jam" class="input-checkbox">
+                        <label for="savor-jam">джемы</label>
+                    </div>
+                </div>
+                <button class="filter-btn" name="filter-send" type="submit">Применить</button>
+            </div> 
         </form>
         <div class="products">
             <article class="products-item">
@@ -231,25 +277,25 @@
         </div>
         <ul class="pagination">
             <li>
-                <span>&lt;</span>
+                <span class="prev"></span>
             </li>
             <li>
-                <a href="#" class="active">1</a>
+                <a href="#" class="page active">1</a>
             </li>
             <li>
-                <a href="#">2</a>
+                <a href="#" class="page">2</a>
             </li>
             <li>
-                <a href="#">3</a>
+                <a href="#" class="page">3</a>
             </li>
             <li>
-                <a href="#">4</a>
+                <a href="#" class="page">4</a>
             </li>
             <li>
-                <a href="#">5</a>
+                <a href="#" class="page">5</a>
             </li>
             <li>
-                <a href="#">></a>
+                <a href="#" class="next"></a>
             </li>
         </ul>
     </main>
