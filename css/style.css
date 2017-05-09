@@ -318,6 +318,7 @@
 
 .main-navigation-submenu a {
     display: inline-block;
+    vertical-align: top;
     width: 100%;
     height: auto;
     font-size: 14px;
@@ -1160,6 +1161,7 @@ body input[name="toggle"] {
 
 .map-description b {
     display: inline-block;
+    vertical-align: top;
     padding: 3px 0 5px;
     font-size: 18px;
     line-height: 22px;
