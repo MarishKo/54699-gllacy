@@ -1119,6 +1119,10 @@ body input[name="toggle"] {
     z-index: 1;
 }
 
+.map-content iframe {
+    width: 100%;
+}
+
 .map-jaw {
     position: absolute;
     top: 0;
